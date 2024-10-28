@@ -1,0 +1,141 @@
+.cabecera__container{
+    display: flex; /* alinia los onjetos orizontalemte*/
+    justify-content: space-between;/* deja una separacion igual entre objetos*/
+    align-items: center;/* alinia los objetos en el centro*/
+    position: fixed; /*posicion fija  */
+    top: 0;
+}
+.cabecera__buscar__item{
+    display: none
+}
+/*menu lateral*/
+.menu__container{
+    position: fixed;/*pociciona a la derrecha*/
+    bottom: 0%;
+    height: 75px;
+    width: 100%;
+    
+}
+.menu__lista{
+    display: flex;
+    justify-content: space-around;/* usa todo el espacio disponible*/
+    height: 100%;
+
+}
+.menu__lista li {
+    align-self: center; /*alinia cada elemento indibidualmente*/
+    
+}
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+/*videos*/
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;/*los elementos se distribullen en todo el contenedor tanto largo como acho*/
+    gap :10px;
+    
+}
+.videos__item{
+    height: 303px;
+    width: 280px;
+    flex-grow: 1;/*aumenta el tamaño en el espacio propoprcional a los demas elementos*/
+    
+
+}
+
+/* rodatie*/
+.rodapie__container{
+    display: flex;
+/* flex-direction: column;
+    flex-wrap: wrap;*/
+    flex-flow: column wrap;/*suma las dos anteriores*/
+}
+/*seccion superior*/
+.superior__seccion__container{
+    display:flex;
+    align-items: center;
+    white-space: nowrap;/* los textos no se dividen al ser mas de u apalabra*/
+    overflow: scroll;/* agrega scroll*/
+    gap: 15px;/*agrega espacion estre elementos dentro de este*/
+
+}
+
+
+
+
+@media(min-width:834px){
+    /* cabezera*/
+    .cabecera__buscar__item{
+        display: block
+    }
+    /* rodatie*/
+    .rodapie__container{
+        justify-content: space-between;
+    }
+}
+/*menu tablet*/
+@media (min-width: 834px) {
+
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+    
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+    
+    }
+/*menu pc*/
+    @media (min-width: 1440px) {    
+        .menu__container{
+            width: 239px;
+            overflow: scroll;
+
+        }
+        .menu__lista:nth-child(2),
+        .menu__lista:nth-child(3),
+        .menu__lista:nth-child(4){
+        display: flex;
+        }
+        .menu__lista{
+            height: auto;
+            padding: 20px 17px 20px 15px;/*modifica efecto inetrior interio*/
+            gap: 15px;
+            
+        }  
+        .menu__lista:nth-child(3){
+            flex-direction: column-reverse;
+        } 
+
+        .menu__itens{
+            flex-direction: row;/*ubica palabar e icono al lado*/
+            gap: 15px;
+            align-items: center;
+        }
+
+        .videojuegos{
+            order: 3;/*ajustar orden especifico de elementos*/
+        }
+        .peliculas{
+            order: 2;
+        }
+        .premium{
+            order: 1;
+        }
+
+        
+    }
